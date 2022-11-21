@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgb(38, 220, 28);
+  color: white;
+  padding: 4px;
+}
+.nav1 a {
+  border: solid 1px;
+
+  background-color: black;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 4px;
+  text-decoration: none;
+}
