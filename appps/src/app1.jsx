@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import React from "react";
 import Axios from "axios";
+import { AppContext } from ".";
 
 let LOGINUSERKEY = "LOGINUSERKEY";
 function App1() {
+  const {userName, setUserName}=useContext(AppContext);
   const [count, setCount] = useState(0);
   const [user, setUser] = useState([]);
   const [num, setNum] = useState(1);
@@ -12,6 +14,10 @@ function App1() {
   //   const key = JSON.parse(localStorage.getItem("LOGINUSERKEY"));
   //   console.log(key);
   // });
+const takeInput=(e)=>{
+  setUserName(e.target.value)
+}
+
   const handleget = () => {
     setNum(num + 1);
   };
@@ -29,6 +35,7 @@ function App1() {
     setLoading(false);
     localStorage.setItem("LOGINUSERKEY", JSON.stringify(data));
     console.log(data);
+    
   };
   useEffect(() => {
     // Axios.get("https://jsonplaceholder.typicode.com/todos/1").then(
@@ -45,7 +52,9 @@ function App1() {
 
   return (
     <>
-      <h1>I've rendered {count} times!</h1>
+      <h1>I've rendered {userName} as User name</h1>
+      <input type="text" onChange={takeInput} />
+      
       <button onClick={handleget}>Get image</button>
       {/* {user.map((x) => ( */}
       <div>

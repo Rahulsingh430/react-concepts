@@ -13,6 +13,9 @@ function navbar() {
       <div className="nav1">
         <Link to="app1">UseEffect</Link>
       </div>
+      <div className="nav1">
+        <Link to="reactquery">Fetch data</Link>
+      </div>
     </div>
   );
 }

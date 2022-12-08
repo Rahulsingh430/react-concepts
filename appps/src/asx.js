@@ -1,9 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Outlet } from "react-router-dom";
 import New from "./New";
+import { AppContext } from ".";
 
-const Asx = (props) => {
+const Asx = () => {
+  const {userName}=useContext(AppContext);
   const cars = ["Ford", "BMW", "Audi"];
   const One = {
     brand: "Tesla",
@@ -19,7 +21,7 @@ const Asx = (props) => {
   };
   const Hello = ({ color, brand, registration: { country } }) => {
     return (
-      "my car is " + props.brand + " with " + color + " color in " + country
+      "my car is " + " with " + color + " color in " + country
     );
   };
   const Hey = ({ model, type, year, registration: { city } }) => {
@@ -37,7 +39,7 @@ const Asx = (props) => {
 
   return (
     <>
-      <div>Hey this new componenet</div>
+      <div>Hey this new componenet username is : {userName}</div>
       <p>{Hello(One)}</p>
       {myq}
 
